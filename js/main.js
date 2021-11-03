@@ -38,13 +38,16 @@ function getData() {
 
 function check() {
     if (result1.getAttribute('data-att') === result2.getAttribute('data-att')) {
+        document.getElementById("container").classList.add("disableClick")
         clickCheck = 0;
         result1 = 0;
         result2 = 0;
         console.log(result1)
         console.log(result2)
         console.log(clickCheck)
-
+        setTimeout(function () {
+            document.getElementById("container").classList.remove("disableClick")
+        }, 1500);
     } else {
         document.getElementById("container").classList.add("disableClick")
         setTimeout(function () {
