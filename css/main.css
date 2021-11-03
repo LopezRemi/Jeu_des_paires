@@ -87,9 +87,20 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-  .main{
+   .disableClick {
+    pointer-events: none;
+}
+
+  img{
+    max-width: 100%;
+    max-height: auto;
+  }
+
+
+#container{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
   }
 
    .cardBloc {
