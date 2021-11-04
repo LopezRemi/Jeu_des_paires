@@ -1,5 +1,7 @@
 
 let clickCheck = 0;
+let findAll = 0;
+let count = 12;
 
 
 function flip() {
@@ -21,15 +23,13 @@ function getData() {
                 result1 = this;
                 result1.classList.add('disableClick')
                 clickCheck++;
-                console.log(result1)
-                console.log(clickCheck)
                 return;
             }
             if (clickCheck === 1) {
                 result2 = this;
                 result2.classList.add('disableClick')
-                console.log(result2)
-                console.log(clickCheck)
+                clickCheck++;
+                countLeft()
                 check()
             }
         });
@@ -39,16 +39,23 @@ function getData() {
 function check() {
     if (result1.getAttribute('data-att') === result2.getAttribute('data-att')) {
         document.getElementById("container").classList.add("disableClick")
+        findAll++;
+        console.log(findAll)
         clickCheck = 0;
         result1 = 0;
         result2 = 0;
-        console.log(result1)
-        console.log(result2)
-        console.log(clickCheck)
         setTimeout(function () {
             document.getElementById("container").classList.remove("disableClick")
         }, 1500);
-    } else {
+    }
+    if (findAll === 6) {
+        setTimeout(function () {
+            alert("Bravo vous avez terminé le jeu !")
+            location.reload();
+        }, 1000);
+
+    }
+    else {
         document.getElementById("container").classList.add("disableClick")
         setTimeout(function () {
             clickCheck = 0;
@@ -72,6 +79,26 @@ function randomize() {
     };
 }
 
+
+function countLeft() {
+    remaining = document.getElementById("counts")
+    remaining.innerText = count;
+    if (clickCheck === 2) {
+        count--;
+        remaining.innerText = count;
+        clickCheck = 0;
+    }
+    if (count === 0){
+        setTimeout(function(){
+            alert("Vous avez perdus. Essayez encore !")
+            location.reload();
+        },1000)
+        
+    }
+}
+
+
 flip()
 getData()
+countLeft()
 randomize()

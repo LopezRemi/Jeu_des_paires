@@ -87,6 +87,16 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+  .dbzStyle{
+    font-family: 'Saiyan Sans', sans-serif;
+    text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 2px 0 #000, -1px 0 0 #000;
+    font-size: 2em;
+    align-self: flex-end;
+    margin-left: 5em;
+  }
+
+
+
    .layer {
     position: fixed;
     top: 0;
@@ -136,16 +146,17 @@ body{
     
   }
 
-  #yellow{
+  .yellow{
   color: rgb(233, 218, 8);
 
 }
 
-#red{
+.red{
   color: red;
 }
 
   h1{
+    justify-self: center;
     margin-top: 10%;
     font-family: 'Saiyan Sans', sans-serif;
     font-size: 7em;
