@@ -72,7 +72,6 @@ function check() {
 
 function randomize() {
     randomCard = document.getElementsByClassName("cardBloc");
-    console.log(randomCard)
     for (const card of randomCard) {
         let rngNumber = Math.floor(Math.random() * randomCard.length);
         card.style.order = rngNumber;

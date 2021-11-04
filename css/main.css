@@ -90,7 +90,7 @@ textarea {
   .dbzStyle{
     font-family: 'Saiyan Sans', sans-serif;
     text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 2px 0 #000, -1px 0 0 #000;
-    font-size: 2em;
+    font-size: 3em;
     align-self: flex-end;
     margin-left: 5em;
   }
@@ -115,7 +115,7 @@ textarea {
     background-color: lightgrey;
     color: black;
     padding: 2rem;
-    width: 40%;
+    width: 15vw;
     position: fixed;
     z-index: 2001;
     margin-left: auto;
@@ -172,7 +172,6 @@ body{
 
   .balls{
     width: 100%;
-    max-height: auto;
   }
 
 
@@ -214,6 +213,43 @@ body{
   .activate {
     transform: rotateY(180deg);
   }
+
+
+  @media only screen and (min-device-width : 320px) and (max-device-width : 400px) {
+    body{
+      
+      background: url('https://i.ebayimg.com/d/w1600/pict/284295667905_/Dessin-artwork-Drawing-A3-GOKU-Transformations-DBZ-Dragon.jpg');
+      background-size: 100vh;
+      background-repeat: no-repeat;
+    }
+
+    #container{
+      width: 70vw;
+      margin-top: 9vh;
+    }
+
+    h1{
+      display: flex;
+      justify-content: center;
+      width: 70%;
+      font-size: 3em;
+     
+    }
+
+    .dbzStyle{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      font-size: 2em;
+    }
+
+    .header{
+      margin-top: 5%;
+      flex-direction: column;
+
+    }
+
+    }
 /* ==========================================================================
    Helper classes
    ========================================================================== */
