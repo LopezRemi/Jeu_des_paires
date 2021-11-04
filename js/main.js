@@ -87,9 +87,9 @@ function countLeft() {
         remaining.innerText = count;
         clickCheck = 0;
     }
-    if (count === 0){
+    if (count === 0 && findAll !== 5){
         setTimeout(function(){
-            alert("Vous avez perdus. Essayez encore !")
+            alert("Vous avez perdu. Essayez encore !")
             location.reload();
         },1000)
         
