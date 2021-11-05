@@ -130,8 +130,7 @@ h2{
 
 body{
   background: url('https://external-preview.redd.it/ja2rwASy69ySlG3q_Brb8RhD7Sq2gzUEqSxxAbomVS8.png?auto=webp&s=d94d3cd074c7933031287abca2bcfc9735c1c8a6');
-  background-size: contain;
-  background-size: cover;
+  background-size: auto;
   background-repeat: no-repeat;
 }
 
@@ -250,6 +249,114 @@ body{
     }
 
     }
+
+    @media only screen and (min-device-width : 401px) and (max-device-width : 650px) {
+      body{
+        
+        background: url('https://i.ebayimg.com/d/w1600/pict/284295667905_/Dessin-artwork-Drawing-A3-GOKU-Transformations-DBZ-Dragon.jpg');
+        background-size: 100vh;
+        background-repeat: no-repeat;
+      }
+  
+      #container{
+        width: 70vw;
+        margin-top: 9vh;
+      }
+  
+      h1{
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        font-size: 4em;
+       
+      }
+  
+      .dbzStyle{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 3em;
+      }
+  
+      .header{
+        margin-top: 5%;
+        flex-direction: column;
+  
+      }
+  
+      }
+
+      @media only screen and (min-device-width : 651px) and (max-device-width : 1024px) {
+        body{
+          
+          background: url('https://ih1.redbubble.net/image.861025541.4792/flat,1000x1000,075,f.u8.jpg');
+          background-size: auto;
+        }
+    
+        #container{
+          width: 70vw;
+          margin-top: 9vh;
+        }
+    
+        h1{
+          display: flex;
+          justify-content: center;
+          width: 70%;
+          font-size: 5em;
+         
+        }
+    
+        .dbzStyle{
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          font-size: 4em;
+        }
+    
+        .header{
+          margin-top: 5%;
+          flex-direction: column;
+    
+        }
+    
+        }
+
+        @media only screen and (min-device-width : 1025px) and (max-device-width : 1440px) {
+          body{
+            
+            background: url('https://ih1.redbubble.net/image.861025541.4792/flat,1000x1000,075,f.u8.jpg');
+            background-size: auto;
+          }
+      
+          #container{
+            width: 60vw;
+            margin-top: 9vh;
+          }
+      
+          h1{
+            display: flex;
+            justify-content: center;
+            width: 70%;
+            font-size: 5em;
+           
+          }
+      
+          .dbzStyle{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            font-size: 4em;
+          }
+      
+          .header{
+            margin-top: 5%;
+            flex-direction: column;
+      
+          }
+      
+          }
+
+          
 /* ==========================================================================
    Helper classes
    ========================================================================== */

@@ -1,11 +1,11 @@
 
-let clickCheck = 0;
-let findAll = 0;
-let count = 12;
+let clickCheck = 0;      //Variable utilisé pour savoir ou en est le nombre de clic
+let findAll = 0;         //""    ""      ""     "" determiner la fin du jeu
+let count = 12;          //Variable du compteur de coup
 
 
 function flip() {
-    const cards = document.querySelectorAll('.cardBloc')
+    const cards = document.querySelectorAll('.cardBloc')        //Function qui retourne les cartes au clic
     for (let card of cards) {
         card.addEventListener("click", function () {
             this.childNodes[1].classList.add("activate");
@@ -14,9 +14,9 @@ function flip() {
 }
 flip()
 
-function getData() {
-    const cards = document.querySelectorAll('.card')
 
+function getData() {
+    const cards = document.querySelectorAll('.card')        // Function utilisé pour récupérer le data attribute des cartes au clic.
     for (let card of cards) {
         card.addEventListener("click", function () {
             if (clickCheck === 0) {
@@ -28,7 +28,7 @@ function getData() {
             if (clickCheck === 1) {
                 result2 = this;
                 result2.classList.add('disableClick')
-                clickCheck++;
+                clickCheck++; 
                 countLeft()
                 check()
             }
@@ -36,9 +36,10 @@ function getData() {
     }
 }
 
+
 function check() {
-    if (result1.getAttribute('data-att') === result2.getAttribute('data-att')) {
-        document.getElementById("container").classList.add("disableClick")
+    if (result1.getAttribute('data-att') === result2.getAttribute('data-att')) {         // Function qui compare les carte savoir si les DT match et reretourne les cartes
+        document.getElementById("container").classList.add("disableClick")               // dans le cas contraire.   
         findAll++;
         console.log(findAll)
         clickCheck = 0;
@@ -48,7 +49,7 @@ function check() {
             document.getElementById("container").classList.remove("disableClick")
         }, 1500);
     }
-    if (findAll === 6) {
+    if (findAll === 6) {                                                                //if statement qui determine la victoire à partir de "findAll(voir début du code)"
         setTimeout(function () {
             alert("Bravo vous avez terminé le jeu !")
             location.reload();
@@ -70,7 +71,8 @@ function check() {
     }
 }
 
-function randomize() {
+
+function randomize() {                                                                  //Function qui utilise l'order flexblox pour random le placement des cartes.
     randomCard = document.getElementsByClassName("cardBloc");
     for (const card of randomCard) {
         let rngNumber = Math.floor(Math.random() * randomCard.length);
@@ -79,7 +81,7 @@ function randomize() {
 }
 
 
-function countLeft() {
+function countLeft() {                                                   //Function qui décrémente le compteur ou affiche le méssage d'erreur.
     remaining = document.getElementById("counts")
     remaining.innerText = count;
     if (clickCheck === 2) {
@@ -87,12 +89,11 @@ function countLeft() {
         remaining.innerText = count;
         clickCheck = 0;
     }
-    if (count === 0 && findAll !== 5){
-        setTimeout(function(){
+    if (count === 0 && findAll !== 5) {
+        setTimeout(function () {
             alert("Vous avez perdu. Essayez encore !")
             location.reload();
-        },1000)
-        
+        }, 1000)
     }
 }
 
